@@ -8,6 +8,20 @@ import {
   SupportIcon,
 } from './components/icons/ServiceIcons';
 
+// Centralized content for easier updates
+export const ASSETS = {
+  logo: 'https://picsum.photos/seed/aurora-logo/40/40',
+  heroVideo: 'https://storage.googleapis.com/aurora-devs-assets/video-background.mp4',
+};
+
+export const CONTACT_INFO = {
+  email: 'Info@auroradevs.com',
+  phone: '+34 640 61 69 95',
+  whatsappLink: 'https://wa.me/34640616995',
+  instagramLink: 'https://instagram.com',
+};
+
+
 export const NAV_LINKS = [
   { href: '#home', label: 'Inicio' },
   { href: '#services', label: 'Servicios' },

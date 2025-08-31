@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { NAV_LINKS } from '../constants';
+import { NAV_LINKS, ASSETS } from '../constants';
 import ThemeToggle from './ThemeToggle';
 import { MenuIcon, CloseIcon } from './icons/GenericIcons';
 
@@ -27,7 +27,7 @@ const Header: React.FC = () => {
       <nav className="container mx-auto px-6 py-3">
         <div className="flex items-center justify-between">
           <a href="#home" onClick={handleLinkClick} className="flex items-center space-x-2" aria-label="Aurora Devs Home">
-            <img src="https://picsum.photos/seed/aurora-logo/40/40" alt="Aurora Devs Logo" className="h-10 w-10 rounded-full object-cover" />
+            <img src={ASSETS.logo} alt="Aurora Devs Logo" className="h-10 w-10 rounded-full object-cover" />
             <span className="text-xl font-bold text-light-title dark:text-dark-title">Aurora Devs</span>
           </a>
           

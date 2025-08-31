@@ -1,4 +1,5 @@
 import React from 'react';
+import { CONTACT_INFO } from '../constants';
 
 // Icons defined locally to avoid creating new files, as per constraints.
 const VisaIcon = (props: React.SVGProps<SVGSVGElement>) => (
@@ -49,8 +50,8 @@ const Footer: React.FC = () => {
           <div>
             <h3 className="text-xl font-bold mb-4 text-light-title dark:text-dark-title">Contáctanos</h3>
             <ul className="space-y-2">
-              <li><a href="mailto:Info@auroradevs.com" className="hover:text-aurora-yellow transition">Info@auroradevs.com</a></li>
-              <li><p>+34 912 34 56 78</p></li>
+              <li><a href={`mailto:${CONTACT_INFO.email}`} className="hover:text-aurora-yellow transition">{CONTACT_INFO.email}</a></li>
+              <li><p>{CONTACT_INFO.phone}</p></li>
             </ul>
           </div>
 

@@ -1,6 +1,7 @@
 
 import React, { useState } from 'react';
 import { EmailIcon, InstagramIcon, WhatsAppIcon } from './icons/SocialIcons';
+import { CONTACT_INFO } from '../constants';
 
 const Contact: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -61,26 +62,26 @@ const Contact: React.FC = () => {
                   <EmailIcon className="w-6 h-6 text-aurora-yellow mt-1"/>
                   <div>
                       <h4 className="font-bold text-light-title dark:text-dark-title">Correo Electrónico</h4>
-                      <a href="mailto:Info@auroradevs.com" className="text-light-text dark:text-dark-text hover:text-aurora-yellow transition">Info@auroradevs.com</a>
+                      <a href={`mailto:${CONTACT_INFO.email}`} className="text-light-text dark:text-dark-text hover:text-aurora-yellow transition">{CONTACT_INFO.email}</a>
                   </div>
               </div>
               <div className="flex items-start space-x-4">
                   <WhatsAppIcon className="w-6 h-6 text-aurora-yellow mt-1"/>
                   <div>
                       <h4 className="font-bold text-light-title dark:text-dark-title">Teléfono</h4>
-                      <p className="text-light-text dark:text-dark-text">+34 912 34 56 78</p>
+                      <p className="text-light-text dark:text-dark-text">{CONTACT_INFO.phone}</p>
                   </div>
               </div>
             </div>
             <div className="mt-8 pt-6 border-t border-gray-200 dark:border-gray-700">
                 <div className="flex space-x-4 justify-center">
-                    <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="p-3 bg-light-bg dark:bg-dark-bg rounded-full text-light-text dark:text-dark-text hover:text-aurora-yellow hover:bg-gray-200 dark:hover:bg-gray-600 transition" aria-label="Visit our Instagram page">
+                    <a href={CONTACT_INFO.instagramLink} target="_blank" rel="noopener noreferrer" className="p-3 bg-light-bg dark:bg-dark-bg rounded-full text-light-text dark:text-dark-text hover:text-aurora-yellow hover:bg-gray-200 dark:hover:bg-gray-600 transition" aria-label="Visit our Instagram page">
                         <InstagramIcon className="w-6 h-6"/>
                     </a>
-                    <a href="mailto:Info@auroradevs.com" className="p-3 bg-light-bg dark:bg-dark-bg rounded-full text-light-text dark:text-dark-text hover:text-aurora-yellow hover:bg-gray-200 dark:hover:bg-gray-600 transition" aria-label="Send us an email">
+                    <a href={`mailto:${CONTACT_INFO.email}`} className="p-3 bg-light-bg dark:bg-dark-bg rounded-full text-light-text dark:text-dark-text hover:text-aurora-yellow hover:bg-gray-200 dark:hover:bg-gray-600 transition" aria-label="Send us an email">
                         <EmailIcon className="w-6 h-6"/>
                     </a>
-                    <a href="https://wa.me/34912345678" target="_blank" rel="noopener noreferrer" className="p-3 bg-light-bg dark:bg-dark-bg rounded-full text-light-text dark:text-dark-text hover:text-aurora-yellow hover:bg-gray-200 dark:hover:bg-gray-600 transition" aria-label="Chat with us on WhatsApp">
+                    <a href={CONTACT_INFO.whatsappLink} target="_blank" rel="noopener noreferrer" className="p-3 bg-light-bg dark:bg-dark-bg rounded-full text-light-text dark:text-dark-text hover:text-aurora-yellow hover:bg-gray-200 dark:hover:bg-gray-600 transition" aria-label="Chat with us on WhatsApp">
                         <WhatsAppIcon className="w-6 h-6"/>
                     </a>
                 </div>

@@ -1,4 +1,5 @@
 import React from 'react';
+import { ASSETS } from '../constants';
 
 const Hero: React.FC = () => {
 
@@ -12,7 +13,7 @@ const Hero: React.FC = () => {
           playsInline
           className="w-full h-full object-cover"
         >
-          <source src="https://storage.googleapis.com/aurora-devs-assets/video-background.mp4" type="video/mp4" />
+          <source src={ASSETS.heroVideo} type="video/mp4" />
           Your browser does not support the video tag.
         </video>
         <div className="absolute top-0 left-0 w-full h-full bg-black/60"></div>

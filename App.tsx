@@ -7,6 +7,7 @@ import Services from './components/Services';
 import Portfolio from './components/Portfolio';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import WhatsAppButton from './components/WhatsAppButton';
 
 function App() {
   const { theme } = useTheme();
@@ -21,6 +22,7 @@ function App() {
         <Contact />
       </main>
       <Footer />
+      <WhatsAppButton />
     </div>
   );
 }
