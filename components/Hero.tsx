@@ -1,15 +1,6 @@
-
 import React from 'react';
 
 const Hero: React.FC = () => {
-
-  const handleScrollToContact = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    e.preventDefault();
-    const contactSection = document.querySelector('#contact');
-    if (contactSection) {
-      contactSection.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
 
   return (
     <section id="home" className="relative flex items-center justify-center min-h-screen text-center text-white">
@@ -36,7 +27,6 @@ const Hero: React.FC = () => {
         </p>
         <a
           href="#contact"
-          onClick={handleScrollToContact}
           className="bg-aurora-yellow text-white font-bold py-3 px-8 rounded-full text-lg hover:bg-yellow-600 transition-all duration-300 transform hover:scale-105"
           aria-label="Get a free consultation"
         >

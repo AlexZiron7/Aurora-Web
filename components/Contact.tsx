@@ -23,7 +23,7 @@ const Contact: React.FC = () => {
   };
 
   return (
-    <section id="contact" className="py-20 bg-light-bg dark:bg-dark-bg">
+    <section id="contact" className="py-20 bg-light-bg dark:bg-dark-bg scroll-mt-20">
       <div className="container mx-auto px-6">
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-light-title dark:text-dark-title">Contáctanos</h2>
         <p className="text-center text-lg mb-12 max-w-2xl mx-auto text-light-text dark:text-dark-text">¿Tienes un proyecto en mente? Hablemos de cómo podemos ayudarte.</p>

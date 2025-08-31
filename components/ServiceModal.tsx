@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 import type { Service } from '../types';
 import { CloseIcon } from './icons/GenericIcons';
@@ -24,18 +23,6 @@ const ServiceModal: React.FC<ServiceModalProps> = ({ service, onClose }) => {
     };
   }, [onClose]);
 
-  const handleRequestConsultation = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    e.preventDefault();
-    onClose();
-    const contactSection = document.querySelector('#contact');
-    if (contactSection) {
-        // Wait for modal to close before scrolling
-        setTimeout(() => {
-            contactSection.scrollIntoView({ behavior: 'smooth' });
-        }, 300);
-    }
-  };
-
   return (
     <div
       className="fixed inset-0 bg-black/70 z-[9999] flex items-center justify-center p-4 transition-opacity duration-300"
@@ -58,18 +45,13 @@ const ServiceModal: React.FC<ServiceModalProps> = ({ service, onClose }) => {
             <img src={service.imageUrl} alt={service.title} className="w-full h-64 md:h-full object-cover rounded-t-xl md:rounded-l-xl md:rounded-t-none" />
         </div>
         <div className="w-full md:w-1/2 p-8 flex flex-col justify-center">
-            <div className="flex items-center mb-4">
-               <div className="w-12 h-12 bg-aurora-yellow rounded-full flex items-center justify-center mr-4 shrink-0">
-                 <service.icon className="w-6 h-6 text-white" />
-               </div>
-               <h3 className="text-2xl md:text-3xl font-bold text-light-title dark:text-dark-title">{service.title}</h3>
-            </div>
+            <h3 className="text-2xl md:text-3xl font-bold text-light-title dark:text-dark-title mb-4">{service.title}</h3>
             <div className="text-light-text dark:text-dark-text text-base leading-relaxed mb-6">
               <p>{service.details}</p>
             </div>
             <a
               href="#contact"
-              onClick={handleRequestConsultation}
+              onClick={onClose}
               className="bg-aurora-yellow text-white font-bold py-3 px-6 rounded-full text-base hover:bg-yellow-600 transition-all duration-300 transform hover:scale-105 self-start"
               aria-label="Request a free consultation for this service"
             >

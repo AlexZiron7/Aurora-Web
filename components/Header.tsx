@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { NAV_LINKS } from '../constants';
 import ThemeToggle from './ThemeToggle';
@@ -16,12 +15,8 @@ const Header: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
-    e.preventDefault();
-    const section = document.querySelector(href);
-    if (section) {
-      section.scrollIntoView({ behavior: 'smooth' });
-    }
+  // Simplified handler to close the mobile menu on link click
+  const handleLinkClick = () => {
     if (isOpen) {
       setIsOpen(false);
     }
@@ -31,7 +26,7 @@ const Header: React.FC = () => {
     <header className={`sticky top-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-white/80 dark:bg-dark-bg/80 backdrop-blur-md shadow-md' : 'bg-transparent'}`}>
       <nav className="container mx-auto px-6 py-3">
         <div className="flex items-center justify-between">
-          <a href="#home" onClick={(e) => handleNavClick(e, '#home')} className="flex items-center space-x-2" aria-label="Aurora Devs Home">
+          <a href="#home" onClick={handleLinkClick} className="flex items-center space-x-2" aria-label="Aurora Devs Home">
             <img src="https://picsum.photos/seed/aurora-logo/40/40" alt="Aurora Devs Logo" className="h-10 w-10 rounded-full object-cover" />
             <span className="text-xl font-bold text-light-title dark:text-dark-title">Aurora Devs</span>
           </a>
@@ -41,7 +36,7 @@ const Header: React.FC = () => {
               <a 
                 key={link.href} 
                 href={link.href} 
-                onClick={(e) => handleNavClick(e, link.href)}
+                onClick={handleLinkClick}
                 className="text-light-text dark:text-dark-text font-medium hover:text-aurora-yellow transition-colors duration-300" 
                 aria-label={`Go to ${link.label} section`}
               >
@@ -69,7 +64,7 @@ const Header: React.FC = () => {
               <a
                 key={link.href}
                 href={link.href}
-                onClick={(e) => handleNavClick(e, link.href)}
+                onClick={handleLinkClick}
                 className="text-light-text dark:text-dark-text font-medium hover:text-aurora-yellow transition-colors duration-300 text-lg"
                 aria-label={`Go to ${link.label} section`}
               >
