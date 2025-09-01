@@ -1,5 +1,5 @@
 import React from 'react';
-import { ASSETS } from '../constants';
+import videoBackground from '../assets/video/video-background.mp4';
 
 const Hero: React.FC = () => {
 
@@ -13,7 +13,7 @@ const Hero: React.FC = () => {
           playsInline
           className="w-full h-full object-cover"
         >
-          <source src={ASSETS.heroVideo} type="video/mp4" />
+          <source src={videoBackground} type="video/mp4" />
           Your browser does not support the video tag.
         </video>
         <div className="absolute top-0 left-0 w-full h-full bg-black/60"></div>
